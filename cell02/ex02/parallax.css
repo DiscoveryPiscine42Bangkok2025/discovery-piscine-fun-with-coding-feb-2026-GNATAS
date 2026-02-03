@@ -1,0 +1,22 @@
+body, html {
+  height: 100%;
+  width: 100%;
+}
+
+.parallax {
+  background-image: url('https://www.innnews.co.th/wp-content/uploads/2023/04/28cp-memekid3-superJumbo-1.jpg');
+  height: 100%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero{
+  height: 1000px;
+  font-size: 36px;
+  background-image: url("https://www.techhub.in.th/wp-content/uploads/2021/05/118283916_b19c5a1f-162b-410b-8169-f58f0d153752.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
