@@ -1,0 +1,27 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    height: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; 
+}
+
+td {
+    border: 1px solid black;
+    padding: 10px;
+    vertical-align: middle;
+    font-size: clamp(12px, 2vw, 20px);
+    overflow-wrap: anywhere; 
+}
+
+.left {
+    background: yellowgreen;
+}
+
+.right {
+    background: gray;
+}
