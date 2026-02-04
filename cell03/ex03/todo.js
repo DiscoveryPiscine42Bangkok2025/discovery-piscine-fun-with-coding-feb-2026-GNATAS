@@ -20,7 +20,7 @@ function saveAll() {
   var arr = [];
   var rows = list.children;
   for (var i = 0; i < rows.length; i++) {
-    arr.push(rows[i].dataset.text); // store original text
+    arr.push(rows[i].dataset.text); 
   }
   setCookie(COOKIE_NAME, JSON.stringify(arr));
 }
@@ -38,12 +38,12 @@ function addTodo(text) {
 
   row.onclick = function () {
     if (confirm("Remove this TO DO?")) {
-      row.remove();     // remove from DOM (not hidden)
-      saveAll();        // update cookie
+      row.remove();    
+      saveAll();        
     }
   };
 
-  // add to TOP
+
   if (list.firstChild) list.insertBefore(row, list.firstChild);
   else list.appendChild(row);
 
@@ -69,9 +69,7 @@ btn.onclick = function () {
   addTodo(t);
 };
 
-// INIT: load from cookie
 var saved = loadTodos();
-// loop from end -> start so the final order stays the same (top-first)
 for (var i = saved.length - 1; i >= 0; i--) {
   addTodo(saved[i]);
 }

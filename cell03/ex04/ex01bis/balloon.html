@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Balloon</title>
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    #balloon{
+      width:200px;
+      height:200px;
+      background:red;
+      border-radius:50%;
+      cursor:pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="balloon"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script>
+    $(function () {
+      const $balloon = $("#balloon");
+
+      const colors = ["red", "green", "blue"];
+      let colorIndex = 0;
+      let size = 200;
+
+      function applyStyle() {
+        $balloon.css({
+          width: size + "px",
+          height: size + "px",
+          "background-color": colors[colorIndex]
+        });
+      }
+
+      function nextColor() {
+        colorIndex = (colorIndex + 1) % colors.length;
+      }
+
+      function prevColor() {
+        colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+      }
+
+      $balloon.on("click", function () {
+        size += 10;
+        nextColor();
+
+        if (size > 420) {
+          size = 200;
+          colorIndex = 0;
+        }
+
+        applyStyle();
+      });
+
+      $balloon.on("mouseleave", function () {
+        size -= 5;
+        if (size < 200) size = 200;
+
+        prevColor();
+        applyStyle();
+      });
+
+      applyStyle();
+    });
+  </script>
+
+</body>
+</html>
