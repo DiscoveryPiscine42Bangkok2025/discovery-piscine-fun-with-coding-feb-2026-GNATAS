@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Todo Table</title>
+  <style>
+    body{ font-family: Arial, sans-serif; padding:20px; }
+    #new{ padding:8px 12px; cursor:pointer; display:block; margin: 0 auto;}
+
+    
+    #ft_list{
+      margin: 12px auto 0;
+      display: table;
+      width: 30%;
+      border-collapse: collapse;
+      border: 1px solid #ccc;
+    }
+
+    .row{
+      display: table-row;
+      cursor: pointer;
+    }
+
+    .cell{
+      display: table-cell;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+    }
+
+    .row:first-child .cell{
+      border-top: none;
+    }
+
+    .row:hover{
+      background: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="new">New</button>
+
+  <!-- required container -->
+  <div id="ft_list"></div>
+
+  <script src="todo.js"></script>
+</body>
+</html>
