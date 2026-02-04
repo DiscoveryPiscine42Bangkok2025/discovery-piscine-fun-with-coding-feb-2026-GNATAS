@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Calc</title>
+</head>
+<body>
+
+  <input id="a" type="text">
+  <select id="op">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+    <option>/</option>
+    <option>%</option>
+  </select>
+  <input id="b" type="text">
+  <input id="btn" type="submit" value="Try me!">
+
+  <script>
+    setInterval(function () {
+      alert("Please, use me...");
+    }, 30000);
+
+    function isPosInt(s){
+      return s !== "" && /^[0-9]+$/.test(s);
+    }
+
+    document.getElementById("btn").onclick = function () {
+      var a = document.getElementById("a").value.trim();
+      var b = document.getElementById("b").value.trim();
+      var op = document.getElementById("op").value;
+
+      if (!isPosInt(a) || !isPosInt(b)) {
+        alert("Error :(");
+        return;
+      }
+
+      a = parseInt(a, 10);
+      b = parseInt(b, 10);
+
+      if ((op === "/" || op === "%") && b === 0) {
+        alert("It’s over 9000!");
+        console.log("It’s over 9000!");
+        return;
+      }
+
+      var r;
+      if (op === "+") r = a + b;
+      else if (op === "-") r = a - b;
+      else if (op === "*") r = a * b;
+      else if (op === "/") r = a / b;
+      else r = a % b;
+
+      alert(r);
+      console.log(r);
+    };
+  </script>
+
+</body>
+</html>
